@@ -1,0 +1,242 @@
+* {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #eee;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.75);
+  font-family: "Heebo", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+}
+
+strong {
+  font-weight: 500;
+}
+
+a {
+  color: #60acdd;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn {
+  border: 0;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 1rem;
+  transition: all .2s ease-in-out;
+}
+
+.btn:focus {
+  outline: thin dotted;
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.app {
+  box-shadow: 0 .25rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 95%;
+  overflow: hidden;
+  width: 95%;
+}
+
+.sidebar {
+  background-color: #49515e;
+  flex: 1 1 10rem;
+  height: 100%;
+}
+
+.sidebar__nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn--folder {
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  text-transform: capitalize;
+  transition: background .1s linear;
+  width: 100%;
+}
+
+.btn--folder:hover {
+  background-color: #404549;
+}
+
+.sidebar__count {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.33333rem 0.5rem;
+}
+
+.btn--active {
+  background-color: rgba(255, 255, 255, .1);
+}
+
+.btn--compose {
+  background-color: #60acdd;
+  color: #fff;
+  padding: 1rem;
+  transition: background .1s linear;
+  width: 100%;
+}
+
+.inbox-container {
+  display: flex;
+  flex: 1 1 100%;
+  height: 100%;
+}
+
+.email-list {
+  background-color: #f8f9fb;
+  flex: 1 0 10rem;
+  overflow-y: auto;
+  transition: all .3s ease-in-out;
+}
+
+.email-list--empty,
+.email-content--empty {
+  align-items: center;
+  color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.email {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  padding: 1rem;
+  position: relative;
+}
+
+.email--active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.email--unread {
+  font-weight: 400;
+}
+
+.email__subject {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 0.75rem;
+}
+
+.email__details {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.email__unread-dot {
+  height: 100%;
+  right: 10px;
+  position: absolute;
+  top: 10px;
+}
+
+.email__unread-dot:before {
+  background-color: #60acdd;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 6px;
+  width: 6px;
+}
+
+.email__time {
+  flex: 1 0 30%;
+  font-size: 0.75rem;
+}
+
+.email__sender {}
+
+.email__sender.truncate {
+  flex: 1 0 60%;
+}
+
+.email:hover:not(.email--active) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.email-content {
+  background-color: #fff;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  flex: 1 0 65%;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.email-content__header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.email-content__recipient {
+  margin-bottom: 1rem;
+}
+
+.email-content__subject {
+  display: flex;
+  justify-content: space-between;
+}
+
+.email-content__title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 0 1rem;
+}
+
+.email-content__sender {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn--delete {
+  background-color: transparent;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 59 59"><g><path d="M29.5,51c0.552,0,1-0.447,1-1V17c0-0.553-0.448-1-1-1s-1,0.447-1,1v33C28.5,50.553,28.948,51,29.5,51z"/><path d="M19.5,51c0.552,0,1-0.447,1-1V17c0-0.553-0.448-1-1-1s-1,0.447-1,1v33C18.5,50.553,18.948,51,19.5,51z"/><path d="M39.5,51c0.552,0,1-0.447,1-1V17c0-0.553-0.448-1-1-1s-1,0.447-1,1v33C38.5,50.553,38.948,51,39.5,51z"/><path d="M52.5,6H38.456c-0.11-1.25-0.495-3.358-1.813-4.711C35.809,0.434,34.751,0,33.499,0H23.5c-1.252,0-2.31,0.434-3.144,1.289   C19.038,2.642,18.653,4.75,18.543,6H6.5c-0.552,0-1,0.447-1,1s0.448,1,1,1h2.041l1.915,46.021C10.493,55.743,11.565,59,15.364,59   h28.272c3.799,0,4.871-3.257,4.907-4.958L50.459,8H52.5c0.552,0,1-0.447,1-1S53.052,6,52.5,6z M21.792,2.681   C22.24,2.223,22.799,2,23.5,2h9.999c0.701,0,1.26,0.223,1.708,0.681c0.805,0.823,1.128,2.271,1.24,3.319H20.553   C20.665,4.952,20.988,3.504,21.792,2.681z M46.544,53.979C46.538,54.288,46.4,57,43.636,57H15.364   c-2.734,0-2.898-2.717-2.909-3.042L10.542,8h37.915L46.544,53.979z"/></g></svg>');
+  background-repeat: no-repeat;
+  height: 1.5rem;
+  padding: 0;
+  transition: transform .2s cubic-bezier(0.85, -0.7, 0.7, 3.25);
+  width: 1.5rem;
+}
+
+.btn--delete:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.btn--delete:active {
+  transform: scale(.75);
+}
