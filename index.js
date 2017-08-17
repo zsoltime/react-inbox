@@ -13,7 +13,7 @@ class App extends React.Component {
     this.fetchNewEmails = true;
 	}
   componentDidMount() {
-    fetch('http://databro.com/16043/inbox.json')
+    fetch('//databro.com/16043/inbox.json')
     .then(res => res.json())
     .then(emails => emails.sort((a, b) => {
       return new Date(b.date) - new Date(a.date);
@@ -22,7 +22,7 @@ class App extends React.Component {
       this.setState({ emails }, this.openFolder);
     });
 
-    fetch('http://databro.com/16045/newemails.json')
+    fetch('//databro.com/16045/newemails.json')
     .then(res => res.json())
     .then(newEmails => { this.setState({ newEmails }); });
 
